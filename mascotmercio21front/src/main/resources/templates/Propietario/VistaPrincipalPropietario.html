@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotmercio</title>
+    <link rel="stylesheet" href="/VistaPrincipalCliente.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    
+</head>
+<body>
+
+    <div class="navbar-top">
+    <img src="/fotos/logo_mascotmercio.png" alt="Logo" class="login-logo">
+   
+    </div>
+
+    <div class="sidebar">
+        <button class="sidebar-btn">Inicio</button>
+        <button id="botonPerfil" class="sidebar-btn">Mi perfil</button>
+        <button id="botonMis" class="sidebar-btn">Mis establecimientos</button>
+        <button class="sidebar-btn">Mejores establecimientos</button>
+        <button id="cerrarBoton" class="sidebar-btn">Cerrar sesión</button>
+    </div>
+
+    <div class="main-content">
+        
+        <div class="search-bar">
+            ¡Busca tu establecimiento más cercano!
+            <input type="text" placeholder="Establecimiento">
+            <button>Buscar</button>
+        </div>
+        
+</div>
+    <div id='map' class='map-container'></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaG9uZGEwNiIsImEiOiJjbHVudXMzZ2sxaXhjMnFsaW9sM3lpeGpuIn0.uGP_UnWdUQtnJ4uVmg03MQ';
+var map = new mapboxgl.Map({
+    container: 'map', 
+    style: 'mapbox://styles/mapbox/streets-v11', 
+    center: [-3.703790, 40.416775], 
+    zoom: 6 
+});
+</script>
+
+
+//Botones
+
+<script>
+    document.getElementById('botonPerfil').addEventListener('click', function() {
+        window.location.href = '/propietario/perfil';
+    });
+</script>
+
+<script>
+    document.getElementById('botonMis').addEventListener('click', function() {
+        window.location.href = '/propietario/establecimientos';
+    });
+    document.getElementById('cerrarBoton').addEventListener('click', function() {
+        window.location.href = '/';
+    });  
+</script>
+
+
+
+</body>
+</html>

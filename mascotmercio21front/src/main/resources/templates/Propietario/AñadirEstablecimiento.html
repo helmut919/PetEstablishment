@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotmercio</title>
+    <link rel="stylesheet" href="/AñadirEstablecimiento.css">
+    
+    
+</head>
+<body>
+
+    <div class="navbar-top">
+    <img src="/fotos/logo_mascotmercio.png" alt="Logo" class="login-logo">
+   
+    </div>
+
+    <div class="sidebar">
+        <button id="botonInicio" class="sidebar-btn">Inicio</button>
+        <button id="botonPerfil" class="sidebar-btn">Mi perfil</button>
+        <button id="botonMis" class="sidebar-btn">Mis establecimientos</button>
+        <button class="sidebar-btn">Mejores establecimientos</button>
+        <button id="cerrarBoton" class="sidebar-btn">Cerrar sesión</button>
+    </div>
+
+    <div class="main-content">
+        <div class="header-box">
+            <h1>AÑADIR ESTABLECIMIENTO</h1>
+        </div>
+        <div class="form-box">
+            <form action="/ruta-para-procesar-formulario" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nombre">Nombre del establecimiento:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción del establecimiento:</label>
+                <textarea id="descripcion" name="descripcion" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="horario_apertura">Horario apertura:</label>
+                <input type="time" id="horario_apertura" name="horario_apertura" required>
+            </div>
+            <div class="form-group">
+                <label for="horario_cierre">Horario cierre:</label>
+                <input type="time" id="horario_cierre" name="horario_cierre" required>
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*">
+            </div>
+            <button type="submit">AÑADIR</button>
+        </form>
+    </div>
+    
+
+
+
+
+
+<script>
+    document.getElementById('botonPerfil').addEventListener('click', function() {
+        window.location.href = '/propietario/perfil';
+    });
+</script>
+
+<script>
+    document.getElementById('botonMis').addEventListener('click', function() {
+        window.location.href = '/propietario/establecimientos';
+    });
+    document.getElementById('botonInicio').addEventListener('click', function() {
+            window.location.href = '/propietario';
+        });
+        document.getElementById('cerrarBoton').addEventListener('click', function() {
+        window.location.href = '/';
+    });
+    
+</script>
+
+
+
+</body>
+</html>

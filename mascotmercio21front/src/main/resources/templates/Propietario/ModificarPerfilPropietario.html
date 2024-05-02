@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Perfil</title>
+    <link rel="stylesheet" href="/ModificarPerfil.css"> 
+</head>
+<body>
+    <div class="navbar-top">
+        <img src="/fotos/logo_mascotmercio.png" alt="Logo" class="login-logo">
+       
+        </div>
+    
+        <div class="sidebar">
+            <button id="botonInicio" class="sidebar-btn">Inicio</button>
+            <button class="sidebar-btn">Mi perfil</button>
+            <button id="botonMis" class="sidebar-btn">Mis establecimientos</button>
+            <button class="sidebar-btn">Mejores establecimientos</button>
+            <button id="cerrarBoton" class="sidebar-btn">Cerrar sesión</button>
+        </div>
+
+    <div class="main-content">
+        <h2 class="modify-profile-title">MODIFICAR PERFIL</h2>
+        <div class="profile-container">
+            
+            <div class="form-section left">
+                <form>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" value="Miguel">
+                    
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" value="Perez Ruiz">
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value="miguelpr@gmail.com">
+                    
+                    <!-- Botón de guardar -->
+                    <button type="submit">Guardar</button>
+                </form>
+            </div>
+            <div class="form-section right">
+                <form>
+                    <label for="usuario">Nombre de usuario</label>
+                    <input type="text" id="usuario" value="miguel00">
+                    
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" value="1234">
+                    
+                    <label for="fecha-nacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="fecha-nacimiento" value="2000-02-02">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+//Botones
+
+
+<script>
+        document.getElementById('botonInicio').addEventListener('click', function() {
+            window.location.href = '/propietario';
+        });
+    </script>
+
+<script>
+    document.getElementById('botonMis').addEventListener('click', function() {
+        window.location.href = '/propietario/establecimientos';
+    });
+</script>
+<script>
+ document.getElementById('cerrarBoton').addEventListener('click', function() {
+        window.location.href = '/';
+    });    
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotecomercio</title>
+    <link rel="stylesheet" href="/MisEstablecimientos.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    
+</head>
+<body>
+
+    <div class="navbar-top">
+    <img src="/fotos/logo_mascotmercio.png" alt="Logo" class="login-logo">
+   
+    </div>
+
+    <div class="sidebar">
+        <button id="botonInicio" class="sidebar-btn">Inicio</button>
+        <button id="botonPerfil" class="sidebar-btn">Mi perfil</button>
+        <button class="sidebar-btn">Mis establecimientos</button>
+        <button class="sidebar-btn">Mejores establecimientos</button>
+        <button id="cerrarBoton" class="sidebar-btn">Cerrar sesión</button>
+    </div>
+
+<div class="content-wrapper">
+    <div class="main-content">
+        <div class="establishments-box">
+            <h2 class="section-title">MIS ESTABLECIMIENTOS</h2>
+            <div class="establishment-list">
+                <div class="establishment-item">
+                    <span class="establishment-name">🏠BowlingDog</span>
+                    <button class="establishment-edit">✏️</button>
+                    <button class="establishment-delete">🗑️</button>
+                </div>
+                <div class="establishment-item">
+                    <span class="establishment-name">🏠El agujero del gato</span>
+                    <button class="establishment-edit">✏️</button>
+                    <button class="establishment-delete">🗑️</button>
+                </div>
+                <div class="establishment-item">
+                    <span class="establishment-name">🏠PetPlay Haven</span>
+                    <button class="establishment-edit">✏️</button>
+                    <button class="establishment-delete">🗑️</button>
+                </div>
+            </div>
+            <button id="anadirEstablecimiento" class="add-establishment-btn">Añadir nuevo establecimiento</button>
+        </div>
+        
+    </div>
+    <div id='map' class='map-container'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaG9uZGEwNiIsImEiOiJjbHVudXMzZ2sxaXhjMnFsaW9sM3lpeGpuIn0.uGP_UnWdUQtnJ4uVmg03MQ';
+    var map = new mapboxgl.Map({
+        container: 'map', 
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-3.703790, 40.416775], 
+        zoom: 6 
+    });
+    document.getElementById('botonInicio').addEventListener('click', function() {
+            window.location.href = '/propietario';
+        });
+
+    document.getElementById('botonPerfil').addEventListener('click', function() {
+        window.location.href = '/propietario/perfil';
+    });
+    document.getElementById('cerrarBoton').addEventListener('click', function() {
+        window.location.href = '/';
+    });
+    document.getElementById('anadirEstablecimiento').addEventListener('click', function() {
+        window.location.href = '/propietario/establecimientos/añadirestablecimiento';
+    }); 
+
+
+
+    </script>
+   
+       
+    
+ 
+</body>
+</html>

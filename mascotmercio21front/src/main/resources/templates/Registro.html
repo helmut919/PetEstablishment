@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Mascotmercio - Registro de Usuario </title>
+<link rel="stylesheet" href="/RegistroCliente.css">
+</head>
+<body>
+
+<div class="contenedor">
+    <h2>REGÍSTRESE</h2>
+    <form id="formularioRegistro" action="http://localhost:8081/clientes" method="post">
+        <div class="fila">
+            <input type="number" id="id" name="id" placeholder="Id de usuario" required>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            
+        </div>
+        <div class="fila">
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+            <input type="date" id="fechaNacimiento" name="fechanacimiento" required>
+        </div>
+        <div class="fila">
+            
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+
+        </div>
+        <div class="fila">
+            <label>
+                <input type="radio" name="tipoUsuario" value="cliente" checked> CLIENTE
+            </label>
+            <label>
+                <input type="radio" name="tipoUsuario" value="propietario"> PROPIETARIO
+            </label>
+        </div>
+        <div class="fila condiciones">
+            <label>
+                <input type="checkbox" name="terminos" required> Acepto los términos y condiciones de uso
+            </label>
+        </div>
+        <div class="fila">
+            <button type="submit" id="botonRegistrarse">Registrarse</button>
+        </div>
+    </form>
+</div>
+ <script>
+    document.getElementById('formularioRegistro').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe automáticamente
+        // Redirecciona a la página principal
+        window.location.href = '/'; 
+    });
+</script> 
+<!-- <script>
+    var clienteManagerURL = 'http://localhost:8081/clientes';
+  </script>
+<script src="js/cliente.js"></script>
+<script>
+       document.getElementById('botonRegistrarse').addEventListener('click', function(event) {
+        event.preventDefault();
+        //Obtener datos del formulario
+        var nombre = document.getElementById('nombre').value;
+        var id = 1;
+        var apellidos = document.getElementById('apellidos').value;
+        var contraseña = document.getElementById('contrasena').value;
+        var email = document.getElementById('email').value;
+        var fechanacimiento = document.getElementById('fechaNacimiento').value;
+        agregarCliente({id: id, nombre: nombre, apellidos: apellidos, contraseña: contraseña, email: email, fechanacimiento: fechanacimiento});
+       });
+</script> -->
+
+
+</body>
+</html>
